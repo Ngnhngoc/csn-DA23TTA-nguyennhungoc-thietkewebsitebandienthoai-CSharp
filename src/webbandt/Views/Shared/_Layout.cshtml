@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebBanDT</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/webbandt.styles.css" asp-append-version="true" />
+
+    <style>
+        /* SỬA LỖI 1: Thêm @@ trước media để không bị lỗi code C# */
+        @@media (max-width: 768px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 40px 0 0;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+            width: 30%;
+            margin-bottom: 30px;
+        }
+
+            .footer-col h4 {
+                font-size: 18px;
+                color: #f7b42c;
+                margin-bottom: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .footer-col p {
+                color: #bbb;
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .footer-col a {
+                display: block;
+                color: #bbb;
+                margin-bottom: 10px;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+
+                .footer-col a:hover {
+                    color: #fff;
+                    padding-left: 5px;
+                }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="/"><img src="~/images/logodoi.jpg" class="logo" alt="Logo"></a>
+
+        <div>
+            <ul id="menu">
+                <li><a href="/"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="/Home/Sanpham">Sản Phẩm</a></li>
+                <li><a href="/Home/Lienhe">Liên hệ</a></li>
+                <li><a href="/Home/LichSuDonHang" style="color: blue; font-weight: bold;">Lịch sử đơn hàng</a></li>
+
+                <partial name="_LoginPartial" />
+
+                <li id="lg-bag"><a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a></li>
+
+            </ul>
+            <a href="#" id="close"><i class="fas fa-times"></i></a>
+        </div>
+
+        <div id="mobile">
+            <a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </section>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Thế Giới Di Động</h4>
+                    <p>Hệ thống bán lẻ điện thoại di động chính hãng.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/1CSziPrQTW/?mibextid=wwXIfr" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@@nguyennhungoc7368" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/phonereal_dienthoai/?igsh=MWM2a3psY3V1ZHloaQ%3D%3D&utm_source=qr" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@@phonereal_dienthoai?_r=1&_t=ZS-92DhgMQ2LOX" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Lưu ý</h4>
+                    <a href="#">Kiểm tra hàng trước khi thanh toán</a>
+                    <a href="#">Vui lòng giữ lại hóa đơn khi đổi trả </a>
+                    <a href="#">Liên hệ cho cửa hàng để giải đáp thắc mắc</a>
+                    <a href="#">Bảo hành khi phát hiện máy lỗi</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-phone-alt"></i> 0332767567</p>
+                    <p><i class="fas fa-envelope"></i> ngocsummer0309@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 CSN Thiết kế bởi Nguyễn Như Ngọc.
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Script Menu Mobile
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('menu');
+
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            })
+        }
+        if (close) {
+            close.addEventListener('click', (e) => {
+                e.preventDefault(); // Ngăn chặn load lại trang
+                nav.classList.remove('active');
+            })
+        }
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model webbandt.Models.DonHang
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid px-4">
+    <h3 class="mt-4">Chi tiết đơn hàng #@Model.Id</h3>
+    <a asp-action="Index" class="btn btn-secondary mb-3"><i class="fas fa-arrow-left"></i> Quay lại</a>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header fw-bold">Thông tin khách hàng</div>
+                <div class="card-body">
+                    <p><strong>Họ tên:</strong> @Model.HoTen</p>
+                    <p><strong>SĐT:</strong> @Model.SoDienThoai</p>
+                    <p><strong>Email:</strong> @Model.Email</p>
+                    <p><strong>Địa chỉ:</strong> @Model.DiaChi</p>
+                    <p><strong>Ghi chú:</strong> @Model.GhiChu</p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header fw-bold bg-warning bg-opacity-25">Cập nhật trạng thái</div>
+                <div class="card-body">
+                    <form asp-action="UpdateStatus" method="post">
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <select name="trangThai" class="form-select mb-3">
+                            <option value="0" selected="@(Model.TrangThai == 0)">Mới đặt</option>
+                            <option value="1" selected="@(Model.TrangThai == 1)">Đang giao hàng</option>
+                            <option value="2" selected="@(Model.TrangThai == 2)">Đã hoàn thành</option>
+                            <option value="3" selected="@(Model.TrangThai == 3)">Hủy đơn</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary w-100">Cập nhật</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header fw-bold">Sản phẩm đã mua</div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Hình ảnh</th>
+                                <th>Số lượng</th>
+                                <th>Giá</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ChiTietDonHangs)
+                            {
+                                <tr>
+                                    <td>
+                                        @if (item.Product != null)
+                                        {
+                                            <span>@item.Product.Name</span>
+                                        }
+                                        else
+                                        {
+
+                                            <span>Sản phẩm đã xóa</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.Product != null)
+                                        {
+                                            <img src="@item.Product.ImageUrl" width="50" />
+                                        }
+                                    </td>
+                                    <td>@item.SoLuong</td>
+                                    <td>@item.DonGia.ToString("N0")</td>
+                                    <td>@((item.SoLuong * item.DonGia).ToString("N0"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <h4 class="text-end text-danger mt-3">Tổng cộng: @Model.TongTien.ToString("N0") đ</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

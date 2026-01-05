@@ -1,0 +1,910 @@
+﻿@using System.Linq
+@model webbandt.Models.Product
+@{
+    Layout = null;
+    ViewData["Title"] = Model.Name;
+
+    // --- 1. LOGIC SẢN PHẨM & CẤU HÌNH ---
+    bool isIphone = Model.Name != null && Model.Name.ToLower().Contains("iphone");
+
+    // Giả lập giá gốc cao hơn 15% để làm giá gạch ngang (nếu muốn)
+    var giaGoc = Model.Price * 1.15m;
+
+    // --- 2. THÔNG SỐ KỸ THUẬT ---
+    var specs = new Dictionary<string, string>();
+    specs.Add("Màn hình", Model.ManHinh ?? "Đang cập nhật");
+    specs.Add("Hệ điều hành", Model.HeDieuHanh ?? "Đang cập nhật");
+    specs.Add("Camera sau", Model.CameraSau ?? "Đang cập nhật");
+    specs.Add("Camera trước", Model.CameraTruoc ?? "Đang cập nhật");
+    specs.Add("Chip xử lý", Model.Chip ?? "Đang cập nhật");
+    specs.Add("RAM", Model.Ram ?? "Đang cập nhật");
+    specs.Add("Dung lượng", Model.DungLuong ?? "Đang cập nhật");
+    specs.Add("Pin, Sạc", Model.Pin ?? "Đang cập nhật");
+
+    // --- 3. XỬ LÝ THỐNG KÊ ĐÁNH GIÁ (QUAN TRỌNG) ---
+    // Lấy tất cả đánh giá từ Model
+    var allReviews = Model.DanhGias ?? new List<webbandt.Models.DanhGia>();
+
+    // Chỉ lấy đánh giá GỐC (ParentId == null) để tính điểm sao
+    // (Tránh cộng cả các câu trả lời/thảo luận vào làm sai lệch số liệu)
+    var listDanhGia = allReviews.Where(x => x.ParentId == null).OrderByDescending(x => x.NgayDanhGia).ToList();
+
+    int totalReview = listDanhGia.Count;
+    double avgStar = 0;
+
+    // Biến đếm số lượng & phần trăm
+    int s5 = 0, s4 = 0, s3 = 0, s2 = 0, s1 = 0; // Số lượng
+    int p5 = 0, p4 = 0, p3 = 0, p2 = 0, p1 = 0; // Phần trăm (%)
+
+    if (totalReview > 0)
+    {
+        avgStar = listDanhGia.Average(x => x.SoSao);
+
+        // Đếm số lượng từng loại sao
+        s5 = listDanhGia.Count(x => x.SoSao == 5);
+        s4 = listDanhGia.Count(x => x.SoSao == 4);
+        s3 = listDanhGia.Count(x => x.SoSao == 3);
+        s2 = listDanhGia.Count(x => x.SoSao == 2);
+        s1 = listDanhGia.Count(x => x.SoSao == 1);
+
+        // Tính phần trăm (ép kiểu int để gán vào CSS width)
+        p5 = (int)((s5 * 100.0) / totalReview);
+        p4 = (int)((s4 * 100.0) / totalReview);
+        p3 = (int)((s3 * 100.0) / totalReview);
+        p2 = (int)((s2 * 100.0) / totalReview);
+        p1 = (int)((s1 * 100.0) / totalReview);
+    }
+    }
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name - Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        /* --- CSS PHẦN ĐÁNH GIÁ (QUAN TRỌNG) --- */
+        .box-review {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .review-header-container {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        /* Cột trái */
+        .review-left {
+            width: 35%;
+            text-align: center;
+            border-right: 1px solid #eee;
+            padding-right: 20px;
+        }
+
+            .review-left .score {
+                font-size: 48px;
+                font-weight: bold;
+                color: #333;
+                line-height: 1;
+            }
+
+                .review-left .score small {
+                    font-size: 20px;
+                    color: #999;
+                    font-weight: normal;
+                }
+
+            .review-left .stars {
+                color: #f59e0b;
+                font-size: 18px;
+                margin: 5px 0 10px;
+            }
+
+            .review-left .count {
+                color: #666;
+                font-size: 13px;
+                margin-bottom: 15px;
+            }
+
+        .btn-rate-red {
+            background: #d70018;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+            .btn-rate-red:hover {
+                background: #b30014;
+                color: white;
+            }
+
+        /* Cột phải */
+        .review-right {
+            width: 65%;
+            padding-left: 30px;
+        }
+
+        .progress-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #333;
+        }
+
+            .progress-row span {
+                width: 20px;
+                font-weight: bold;
+            }
+
+            .progress-row i {
+                color: #f59e0b;
+                margin-right: 10px;
+                font-size: 12px;
+            }
+
+        .progress-bar-bg {
+            flex: 1;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: #d70018;
+            border-radius: 4px;
+        }
+
+        .progress-count {
+            color: #666;
+            width: 30px;
+            text-align: right;
+        }
+
+        /* Form bình luận */
+        .comment-box-wrapper {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .comment-box {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .btn-submit-comment {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Danh sách bình luận */
+        .comment-item {
+            border-bottom: 1px solid #f1f1f1;
+            padding: 15px 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .avatar-circle {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #555;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .comment-body {
+            flex: 1;
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .comment-content {
+            color: #444;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .verified-badge {
+            color: #28a745;
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        @@media (max-width: 768px) {
+            .product-layout {
+                flex-direction: column;
+            }
+
+            .col-left, .col-right {
+                width: 100%;
+            }
+
+            .review-header-container {
+                flex-direction: column;
+            }
+
+            .review-left {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                padding-right: 0;
+            }
+
+            .review-right {
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+        /* --- CSS CƠ BẢN --- */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            color: #333;
+        }
+
+        .cps-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #288ad6;
+        }
+
+        /* Layout Grid */
+        .product-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .col-left {
+            width: 40%;
+        }
+
+        .col-right {
+            width: 55%;
+        }
+
+        /* Ảnh */
+        .main-img-box {
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+            .main-img-box img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .thumb-list {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .thumb-item {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ddd;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+            .thumb-item.active {
+                border-color: #d70018;
+            }
+
+            .thumb-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+        /* Giá & Nút */
+        .current-price {
+            color: #d70018;
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .btn-option {
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+            .btn-option.active {
+                border-color: #d70018;
+                color: #d70018;
+                background: #fffbfb;
+                position: relative;
+                font-weight: bold;
+            }
+
+                .btn-option.active::after {
+                    content: '✓';
+                    position: absolute;
+                    top: -5px;
+                    right: -5px;
+                    background: #d70018;
+                    color: white;
+                    border-radius: 50%;
+                    width: 16px;
+                    height: 16px;
+                    font-size: 10px;
+                    text-align: center;
+                    line-height: 16px;
+                }
+
+        .btn-buy-now {
+            width: 100%;
+            background: #d70018;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+            .btn-buy-now:hover {
+                background: #c40016;
+            }
+
+        /* --- PHẦN MỚI: THÔNG SỐ KỸ THUẬT (STYLE TGDĐ) --- */
+        .tech-specs {
+            margin-top: 30px;
+        }
+
+            .tech-specs h3 {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+            .specs-table tr:nth-child(odd) {
+                background-color: #f5f5f5;
+            }
+            /* Màu xen kẽ */
+            .specs-table td {
+                padding: 10px;
+                border: none;
+            }
+
+                .specs-table td:first-child {
+                    width: 35%;
+                    color: #666;
+                    font-weight: 500;
+                }
+
+                .specs-table td:last-child {
+                    color: #333;
+                }
+
+        /* --- PHẦN MỚI: ĐÁNH GIÁ (STYLE TGDĐ/SHOPEE) --- */
+        .review-section {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .rating-overview {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .rating-score {
+            text-align: center;
+            color: #d70018;
+        }
+
+            .rating-score b {
+                font-size: 40px;
+            }
+
+        .stars i {
+            color: #f59e0b;
+        }
+        /* Màu vàng cam */
+
+        .progress-bars {
+            flex: 1;
+            max-width: 300px;
+            font-size: 13px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .bar-bg {
+            flex: 1;
+            height: 6px;
+            background: #eee;
+            margin: 0 10px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: #f59e0b;
+        }
+
+        .user-comment {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f9f9f9;
+            padding-bottom: 15px;
+        }
+
+        .user-name {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .comment-time {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .check-buy {
+            color: #28a745;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        @@media (max-width: 768px) {
+            .product-layout {
+                flex-direction: column;
+            }
+
+            .col-left, .col-right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="/"><img src="~/images/logodoi.jpg" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="menu">
+                <li id="lg-home"><a class="danhdau" href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/Home/Sanpham" class="active">Sản Phẩm</a></li>
+                
+                <li><a href="/Home/Lienhe">Liên hệ</a></li>
+                <li><a href="/Home/LichSuDonHang">Lịch sử đơn hàng</a></li>
+                <partial name="_LoginPartial" />
+
+                <li id="lg-bag"><a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+            <a href="#" id="close"><i class="fas fa-times"></i></a>
+        </div>
+        <div id="mobile">
+            <a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </section>
+
+    <div class="cps-container">
+        <p style="font-size:14px; color:#666;">Trang chủ / @(isIphone ? "Điện thoại" : "Phụ kiện") / @Model.Name</p>
+
+        <div style="border-bottom:1px solid #eee; margin-bottom:20px;">
+            <h1 style="margin:0 0 10px;">@Model.Name</h1>
+            <div class="stars" style="margin-bottom:10px; font-size:14px;">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span style="color:#333; margin-left:5px;">@totalReview đánh giá</span>
+            </div>
+        </div>
+
+        <div class="product-layout">
+
+            <div class="col-left">
+                <div class="main-img-box">
+                    <img src="@Model.ImageUrl" id="MainImg" alt="@Model.Name">
+                </div>
+                <div class="thumb-list">
+                    <div class="thumb-item active" onclick="changeImage(this)"><img src="@Model.ImageUrl"></div>
+                    
+                </div>
+
+                <div class="tech-specs">
+                    <h3>Thông số kỹ thuật</h3>
+                    <table class="specs-table">
+                        @foreach (var spec in specs)
+                        {
+                            <tr>
+                                <td>@spec.Key</td>
+                                <td>@spec.Value</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-right">
+                <form method="post" action="/Kiemtrathanhtoan/ThemVaoGio">
+                    <div class="price-box" style="margin-bottom:20px;">
+                        <span class="current-price" id="display-price">@Model.Price.ToString("n0")₫</span>
+                        <span class="old-price">@giaGoc.ToString("n0")₫</span>
+                        <span style="background:#fee2e2; color:#d70018; padding:3px 8px; border-radius:4px; font-size:12px; font-weight:bold;">-15%</span>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        @if (isIphone)
+                        {
+                            <p><b>Chọn dung lượng:</b></p>
+                            <div class="btn-option active" onclick="updatePrice(this, @Model.Price, '128GB')">128GB</div>
+                            <div class="btn-option" onclick="updatePrice(this, @(Model.Price + 2000000), '256GB')">256GB</div>
+                            <div class="btn-option" onclick="updatePrice(this, @(Model.Price + 4000000), '512GB')">512GB</div>
+                            <input type="hidden" name="size" id="input-option" value="128GB">
+                        }
+                        else
+                        {
+                            <p><b>Chọn màu sắc:</b></p>
+                            <div class="btn-option active" onclick="updateOption(this, 'Đen')">⚫ Đen</div>
+                            <div class="btn-option" onclick="updateOption(this, 'Trắng')">⚪ Trắng</div>
+                            <input type="hidden" name="size" id="input-option" value="Đen">
+                        }
+                    </div>
+
+                    <div style="border:1px solid #d70018; border-radius:8px; overflow:hidden; margin-bottom:20px;">
+                        <div style="background:#d70018; color:white; padding:10px; font-weight:bold;">
+                            <i class="fas fa-gift"></i> Khuyến mãi online
+                        </div>
+                        <ul style="padding:15px 20px; margin:0; font-size:14px; list-style:none;">
+                            <li style="margin-bottom:8px;"><i class="fas fa-check-circle" style="color:#28a745"></i> Nhập mã <b>VNPAY5</b> giảm ngay 5% tối đa 300k</li>
+                            <li><i class="fas fa-check-circle" style="color:#28a745"></i> Tặng suất mua kèm Đồng hồ giảm 40%</li>
+                        </ul>
+                    </div>
+
+                    <input type="hidden" name="id" value="@Model.Id">
+                    <input type="hidden" name="ten" value="@Model.Name">
+                    <input type="hidden" name="gia" id="input-gia" value="@Model.Price">
+                    <input type="hidden" name="anh" value="@Model.ImageUrl">
+
+                    <button type="submit" class="btn-buy-now">MUA NGAY</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="box-review">
+            <h3 style="margin-bottom: 20px;">Đánh giá và bình luận</h3>
+
+            <div class="review-header-container">
+                <div class="review-left">
+                    <div class="score">@avgStar.ToString("0.0")<small>/5</small></div>
+                    <div class="stars">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (i <= avgStar)
+                            {
+                                <i class="fas fa-star"></i>
+                            }
+                            else if (i - 0.5 <= avgStar)
+                            {
+
+                                <i class="fas fa-star-half-alt"></i>
+                            }
+                            else
+                            {
+
+                                <i class="far fa-star" style="color:#ccc"></i>
+                            }
+                        }
+                    </div>
+                    <div class="count">@totalReview lượt đánh giá</div>
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <div class="btn-rate-red" onclick="toggleReviewForm()">Viết đánh giá</div>
+                    }
+                    else
+                    {
+                        <a href="/Identity/Account/Login" class="btn-rate-red" style="background:#444;">Đăng nhập để đánh giá</a>
+                    }
+                </div>
+
+                <div class="review-right">
+                    <div class="progress-row"><span>5</span><i class="fas fa-star"></i><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: @(p5)%"></div></div><div class="progress-count">@s5</div></div>
+                    <div class="progress-row"><span>4</span><i class="fas fa-star"></i><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: @(p4)%"></div></div><div class="progress-count">@s4</div></div>
+                    <div class="progress-row"><span>3</span><i class="fas fa-star"></i><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: @(p3)%"></div></div><div class="progress-count">@s3</div></div>
+                    <div class="progress-row"><span>2</span><i class="fas fa-star"></i><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: @(p2)%"></div></div><div class="progress-count">@s2</div></div>
+                    <div class="progress-row"><span>1</span><i class="fas fa-star"></i><div class="progress-bar-bg"><div class="progress-bar-fill" style="width: @(p1)%"></div></div><div class="progress-count">@s1</div></div>
+                </div>
+            </div>
+
+            <div id="comment-box-wrapper" class="comment-box-wrapper">
+                <form asp-action="GuiDanhGia" asp-controller="Home" method="post">
+                    <input type="hidden" name="ProductId" value="@Model.Id" />
+
+                    <div style="margin-bottom:15px; font-weight:bold;">
+                        Bạn cảm thấy thế nào về sản phẩm?
+                        <span style="color:#f59e0b; margin-left:10px;">
+                            <label><input type="radio" name="SoSao" value="5" checked> 5 <i class="fas fa-star"></i></label>
+                            <label style="margin-left:10px;"><input type="radio" name="SoSao" value="4"> 4 <i class="fas fa-star"></i></label>
+                            <label style="margin-left:10px;"><input type="radio" name="SoSao" value="3"> 3 <i class="fas fa-star"></i></label>
+                            <label style="margin-left:10px;"><input type="radio" name="SoSao" value="2"> 2 <i class="fas fa-star"></i></label>
+                            <label style="margin-left:10px;"><input type="radio" name="SoSao" value="1"> 1 <i class="fas fa-star"></i></label>
+                        </span>
+                    </div>
+
+                    <textarea name="NoiDung" class="comment-box" rows="4" placeholder="Mời bạn chia sẻ cảm nhận về sản phẩm..." required></textarea>
+                    <button type="submit" class="btn-submit-comment">Gửi đánh giá</button>
+                </form>
+            </div>
+
+            <h4 style="margin: 30px 0 15px;">@totalReview Bình luận</h4>
+
+            @if (listDanhGia.Count > 0)
+            {
+                foreach (var item in listDanhGia)
+                {
+                    <div class="comment-item">
+                        <div class="avatar-circle">
+                            @(!string.IsNullOrEmpty(item.UserName) ? item.UserName.Substring(0, 1).ToUpper() : "K")
+                        </div>
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">@(item.UserName ?? "Khách hàng")</span>
+                                <span class="verified-badge"><i class="fas fa-check-circle"></i> Đã mua tại WebBanDT</span>
+                            </div>
+
+                            <div style="margin-bottom:5px;">
+                                @for (int i = 0; i < item.SoSao; i++)
+                                {
+                                    <i class="fas fa-star" style="color:#f59e0b; font-size:11px;"></i>
+                                }
+                            </div>
+
+                            <div class="comment-content">@item.NoiDung</div>
+
+                            <div style="margin-top:8px; font-size:12px; color:#999;">
+                                <span style="cursor:pointer; margin-right:15px; color:#288ad6;" onclick="likeReview(@item.Id, this)">
+                                    <i class="far fa-thumbs-up"></i> Hữu ích (<span class="like-count">@item.LuotThich</span>)
+                                </span>
+                                <span style="cursor:pointer; margin-right:15px; color:#288ad6;" onclick="toggleReplyForm(@item.Id)">
+                                    <i class="far fa-comment-alt"></i> Thảo luận
+                                </span>
+                                <span>@item.NgayDanhGia.ToString("dd/MM/yyyy")</span>
+                            </div>
+
+                            <div id="reply-form-@item.Id" style="display:none; margin-top:10px; background:#f9f9f9; padding:10px; border-radius:5px;">
+                                <form asp-action="GuiDanhGia" asp-controller="Home" method="post">
+                                    @* SỬA GuiTraLoi -> GuiDanhGia *@
+                                    <input type="hidden" name="ProductId" value="@Model.Id">
+                                    <input type="hidden" name="SoSao" value="@item.SoSao"> @* Lấy số sao của bình luận cha *@
+                                    <input type="hidden" name="parentId" value="@item.Id"> @* QUAN TRỌNG: Gửi ID cha *@
+
+                                    <textarea name="NoiDung" rows="2" style="width:100%; border:1px solid #ddd; padding:5px;" placeholder="Nhập câu trả lời..." required></textarea>
+                                    <button type="submit" style="margin-top:5px; background:#333; color:white; border:none; padding:5px 15px; cursor:pointer; font-size:12px;">Gửi</button>
+                                </form>
+                            </div>
+
+                            @if (item.Replies != null && item.Replies.Count > 0)
+                            {
+                                <div class="replies-container" style="margin-left: 40px; border-left: 2px solid #ccc; padding-left: 10px;">
+                                    @foreach (var reply in item.Replies)
+                                    {
+                                        <div style="margin-bottom:10px; background:#f8f9fa; padding:8px; border-radius:5px;">
+                                            <div style="font-weight:bold; font-size:13px;">
+                                                @reply.UserName
+                                                @* Nếu bạn muốn Admin được hiển thị, thì cần logic kiểm tra tên User Admin ở đây *@
+                                            </div>
+                                            <div>@reply.NoiDung</div>
+                                            <small class="text-muted">@reply.NgayDanhGia.ToString("dd/MM/yyyy")</small>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div style="padding:40px; text-align:center; color:#999;">Chưa có bình luận nào.</div>
+            }
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Thế Giới Di Động</h4>
+                    <p>Hệ thống bán lẻ điện thoại di động, laptop, phụ kiện chính hãng hàng đầu Việt Nam.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/1CSziPrQTW/?mibextid=wwXIfr" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@@nguyennhungoc7368" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/phonereal_dienthoai/?igsh=MWM2a3psY3V1ZHloaQ%3D%3D&utm_source=qr" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@@phonereal_dienthoai?_r=1&_t=ZS-92DhgMQ2LOX" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Lưu ý</h4>
+                    <a href="#">Kiểm tra hàng trước khi thanh toán</a>
+                    <a href="#">Vui lòng giữ lại hóa đơn khi đổi trả </a>
+                    <a href="#">Liên hệ cho cửa hàng để giải đáp thắc mắc</a>
+                    <a href="#">Bảo hành khi phát hiện máy lỗi</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-phone-alt"></i> Hotline: 0332767567</p>
+                    <p><i class="fas fa-envelope"></i> Email: ngocsummer0309@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Đông khởi nối dài, Trà Vinh </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025 CSN Thiết kế bởi Nguyễn Như Ngọc.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // JS Xử lý ảnh
+        function changeImage(el) {
+             document.getElementById("MainImg").src = el.querySelector("img").src;
+             document.querySelectorAll(".thumb-item").forEach(i => i.classList.remove("active"));
+             el.classList.add("active");
+        }
+
+        // JS iPhone (Đổi giá + Đổi GB)
+        function updatePrice(el, price, gb) {
+            document.querySelectorAll(".btn-option").forEach(i => i.classList.remove("active"));
+            el.classList.add("active");
+            document.getElementById("display-price").innerText = price.toLocaleString('vi-VN') + "₫";
+            document.getElementById("input-gia").value = price;
+            document.getElementById("input-option").value = gb;
+        }
+            // JS bật tắt form đánh giá
+        function toggleReviewForm() {
+            var box = document.getElementById("comment-box-wrapper");
+            if (box.style.display === "none" || box.style.display === "") {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        }
+        // JS Màu (Chỉ đổi Màu)
+        function updateOption(el, color) {
+            document.querySelectorAll(".btn-option").forEach(i => i.classList.remove("active"));
+            el.classList.add("active");
+            document.getElementById("input-option").value = color;
+        }
+        // Hàm Like
+        function likeReview(id, element) {
+            $.ajax({
+                url: '/Home/LikeDanhGia', // Gọi về Controller
+                type: 'POST',
+                data: { id: id },
+                success: function (response) {
+                    if (response.success) {
+                        // Tìm thẻ span số like và cập nhật số mới
+                        $(element).find(".like-count").text(response.likes);
+                        // Đổi màu nút thành đỏ
+                        $(element).css("color", "#d70018").css("font-weight", "bold");
+                    } else {
+                        alert("Có lỗi xảy ra, thử lại sau!");
+                    }
+                },
+                error: function() {
+                    alert("Lỗi kết nối server!");
+                }
+            });
+        }
+            function toggleReplyForm(commentId) {
+            var formId = 'reply-form-' + commentId;
+            var form = document.getElementById(formId);
+
+            // Ẩn/hiện form
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

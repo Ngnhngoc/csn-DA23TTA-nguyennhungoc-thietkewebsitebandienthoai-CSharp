@@ -1,0 +1,373 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Web Bán Điện Thoại</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        /* --- HEADER --- */
+        #header {
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #E3E6F3;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+            #header .logo {
+                height: 50px;
+                width: auto;
+                mix-blend-mode: multiply;
+            }
+
+        #menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            #menu li {
+                list-style: none;
+                padding: 0 20px;
+                position: relative;
+            }
+
+                #menu li a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #1a1a1a;
+                    transition: 0.3s ease;
+                }
+
+                    #menu li a:hover, #menu li a.active {
+                        color: #088178;
+                    }
+
+                        #menu li a.active::after {
+                            content: "";
+                            width: 30%;
+                            height: 2px;
+                            background: #088178;
+                            position: absolute;
+                            bottom: -4px;
+                            left: 20px;
+                        }
+
+        /* --- FORM LIÊN HỆ --- */
+        .contact-box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            margin-right: 15px;
+        }
+
+        .bg-primary-soft {
+            background: #088178;
+        }
+
+        /* --- CSS FOOTER (COPY TỪ TRANG CHỦ CỦA BẠN) --- */
+        footer {
+            background-color: #222; /* Nền tối */
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+            .footer-col h4 {
+                color: #FFD400; /* Màu vàng */
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            .footer-col p {
+                color: #ccc;
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            .footer-col a {
+                display: block;
+                color: #ccc;
+                text-decoration: none;
+                font-size: 14px;
+                margin-bottom: 10px;
+                transition: 0.3s;
+            }
+
+                .footer-col a:hover {
+                    color: #FFD400;
+                    padding-left: 5px;
+                }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 35px;
+            color: #fff;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 5px;
+            margin-right: 10px;
+  
+            
+        }
+
+            
+
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="/"><img src="~/images/logodoi.jpg" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="menu" class="d-flex align-items-center m-0">
+                <li id="lg-home"><a class="danhdau" href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/Home/Sanpham">Sản Phẩm</a></li>
+                
+                <li><a class="active" href="/Home/Lienhe">Liên Hệ</a></li>
+                <li><a href="/Home/LichSuDonHang">Lịch sử đơn hàng</a></li>
+                <partial name="_LoginPartial" />
+                <li id="lg-bag"><a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a></li>
+                <li><a href="#" id="close"><i class="fas fa-times"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile"><a href="#"><i class="fas fa-shopping-bag"></i></a><i id="bar" class="fas fa-bars"></i></div>
+    </section>
+
+    <section class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div class="mb-5 rounded overflow-hidden shadow-sm">
+                    <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:1200:75/q:90/plain/https://dashboard.cellphones.com.vn/storage/s-edu-2-0-special-desk.gif"
+                         class="w-100 img-fluid" style="object-fit: cover; max-height: 300px;" alt="Banner">
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <div class="contact-box p-4 h-100">
+                            <h4 class="fw-bold mb-4">Thông tin liên lạc</h4>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box bg-primary-soft"><i class="fas fa-map-marker-alt"></i></div>
+                                <div><h6 class="fw-bold mb-1">Địa chỉ</h6><p class="mb-0 text-muted small">Đông khởi nối dài , Trà Vinh</p></div>
+                            </div>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box bg-primary-soft"><i class="fas fa-phone-alt"></i></div>
+                                <div><h6 class="fw-bold mb-1">Hotline</h6><p class="mb-0 text-muted small">0332767567</p></div>
+                            </div>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="icon-box bg-primary-soft"><i class="fas fa-envelope"></i></div>
+                                <div><h6 class="fw-bold mb-1">Email</h6><p class="mb-0 text-muted small">ngocsummer0309@gmail.com</p></div>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1965.080058295244!2d106.34324166625139!3d9.920619649197148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1765733244615!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="contact-box p-4 h-100">
+                            <h4 class="fw-bold mb-4">Gửi tin nhắn</h4>
+                            <div id="successAlert" class="alert alert-success d-none"><i class="fas fa-check-circle"></i> Đã gửi thành công!</div>
+
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small">Họ tên</label>
+                                        <input type="text" name="hoTen" class="form-control bg-light border-0 py-2" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small">Số điện thoại</label>
+                                        <input type="tel" name="soDienThoai" class="form-control bg-light border-0 py-2" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold small">Email</label>
+                                        <input type="email" name="email" class="form-control bg-light border-0 py-2" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-bold small">Nội dung</label>
+                                        <textarea name="noiDung" class="form-control bg-light border-0" rows="5" required></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-dark w-100 py-2 fw-bold" style="background: #088178; border: none;">Gửi Tin Nhắn</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Thế Giới Di Động</h4>
+                    <p>Hệ thống bán lẻ điện thoại di động, laptop, phụ kiện chính hãng hàng đầu Việt Nam.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/1CSziPrQTW/?mibextid=wwXIfr" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@@nguyennhungoc7368" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/phonereal_dienthoai/?igsh=MWM2a3psY3V1ZHloaQ%3D%3D&utm_source=qr" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@@phonereal_dienthoai?_r=1&_t=ZS-92DhgMQ2LOX" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Lưu ý</h4>
+                    <a href="#">Kiểm tra hàng trước khi thanh toán</a>
+                    <a href="#">Vui lòng giữ lại hóa đơn khi đổi trả </a>
+                    <a href="#">Liên hệ cho cửa hàng để giải đáp thắc mắc</a>
+                    <a href="#">Bảo hành khi phát hiện máy lỗi</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-phone-alt"></i> Hotline: 0332767567</p>
+                    <p><i class="fas fa-envelope"></i> Email: ngocsummer0309@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Đông khởi nối dài, Trà Vinh </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025 CSN Thiết kế bởi Nguyễn Như Ngọc.
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 1. Xử lý Menu Mobile (Giữ nguyên)
+        const bar = document.querySelector('#bar');
+        const nav = document.querySelector('#menu');
+        const close = document.querySelector('#close');
+        if (bar) bar.addEventListener('click', () => { nav.classList.toggle('active'); });
+        if (close) close.addEventListener('click', () => { nav.classList.remove('active'); });
+
+        // 2. Xử lý Gửi Mail (CODE MỚI)
+        const form = document.getElementById('contactForm');
+
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Ngăn web load lại trang
+
+                // Hiệu ứng nút bấm "Đang gửi..."
+                const btn = e.target.querySelector('button');
+                const originalText = btn.innerText;
+                btn.innerText = "Đang gửi...";
+                btn.disabled = true;
+
+                // Lấy dữ liệu từ form
+                const formData = new FormData(form);
+
+                // Gửi dữ liệu về HomeController
+                fetch('/Home/GuiTinNhan', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Nếu gửi thành công
+                        document.getElementById('successAlert').classList.remove('d-none'); // Hiện thông báo xanh
+                        form.reset(); // Xóa trắng ô nhập
+                    } else {
+                        // Nếu lỗi (ví dụ sai mật khẩu ứng dụng)
+                        alert("Có lỗi xảy ra: " + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Không thể kết nối đến server.");
+                })
+                .finally(() => {
+                    // Dù thành công hay thất bại cũng trả lại nút bấm như cũ
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+
+                    // Ẩn thông báo sau 5 giây
+                    setTimeout(() => {
+                         document.getElementById('successAlert').classList.add('d-none');
+                    }, 5000);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

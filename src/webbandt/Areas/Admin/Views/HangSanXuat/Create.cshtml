@@ -1,0 +1,22 @@
+﻿@model webbandt.Models.HangSanXuat
+@{
+    ViewData["Title"] = "Thêm Hãng Mới";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow mb-4" style="max-width: 600px; margin: auto;">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Thêm Hãng Sản Xuất</h6>
+    </div>
+    <div class="card-body">
+        <form action="/Admin/HangSanXuat/Create" method="post">
+
+            <div class="form-group mb-3">
+                <label class="fw-bold">Tên Hãng</label>
+                <input type="text" name="TenHang" class="form-control" required placeholder="Nhập tên hãng..." />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Lưu ngay</button>
+        </form>
+    </div>
+</div>

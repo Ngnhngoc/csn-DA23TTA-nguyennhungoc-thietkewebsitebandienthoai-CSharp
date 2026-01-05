@@ -1,0 +1,14 @@
+﻿@model IEnumerable<webbandt.Models.HangSanXuat>
+
+<a class="dropdown-item" href="/Home/Sanpham">
+    Tất cả sản phẩm
+</a>
+
+<div class="dropdown-divider"></div>
+
+@foreach (var item in Model)
+{
+    <a class="dropdown-item" href="/Home/Sanpham?mid=@item.MaHang">
+        @item.TenHang
+    </a>
+}

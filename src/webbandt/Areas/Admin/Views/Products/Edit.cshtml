@@ -1,0 +1,118 @@
+﻿@model webbandt.Models.Product
+
+@{
+    ViewData["Title"] = "Sửa sản phẩm";
+}
+
+<h1>Chỉnh sửa sản phẩm</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="MaHang" />
+            <input type="hidden" asp-for="Status" />
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">
+                    Thông tin cơ bản
+                </div>
+                <div class="card-body">
+                    <div class="form-group mb-3">
+                        <label asp-for="Name" class="control-label">Tên sản phẩm</label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Price" class="control-label">Giá bán</label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Description" class="control-label">Mô tả</label>
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="ImageUrl" class="control-label">Link hình ảnh</label>
+                        <input asp-for="ImageUrl" class="form-control" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header bg-info text-white">
+                    <strong>Thông số kỹ thuật</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Màn hình</label>
+                            <input asp-for="ManHinh" class="form-control" placeholder="Ví dụ: 6.7 inch, OLED" />
+                            <span asp-validation-for="ManHinh" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Hệ điều hành</label>
+                            <input asp-for="HeDieuHanh" class="form-control" placeholder="Ví dụ: iOS 17" />
+                            <span asp-validation-for="HeDieuHanh" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Camera trước</label>
+                            <input asp-for="CameraTruoc" class="form-control" placeholder="Ví dụ: 12 MP" />
+                            <span asp-validation-for="CameraTruoc" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Camera sau</label>
+                            <input asp-for="CameraSau" class="form-control" placeholder="Ví dụ: 48MP + 12MP" />
+                            <span asp-validation-for="CameraSau" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Chipset (CPU)</label>
+                            <input asp-for="Chip" class="form-control" placeholder="Ví dụ: Apple A17 Pro" />
+                            <span asp-validation-for="Chip" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">RAM</label>
+                            <input asp-for="Ram" class="form-control" placeholder="Ví dụ: 8GB" />
+                            <span asp-validation-for="Ram" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Bộ nhớ trong (ROM)</label>
+                            <select asp-for="DungLuong" class="form-control">
+                                <option value="64GB">64GB</option>
+                                <option value="128GB">128GB</option>
+                                <option value="256GB">256GB</option>
+                                <option value="512GB">512GB</option>
+                                <option value="1TB">1TB</option>
+                            </select>
+                            <span asp-validation-for="DungLuong" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label">Pin & Sạc</label>
+                            <input asp-for="Pin" class="form-control" placeholder="Ví dụ: 5000mAh, 20W" />
+                            <span asp-validation-for="Pin" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="submit" value="Lưu thay đổi" class="btn btn-primary w-100 py-2" style="font-weight:bold; font-size:1.1rem;" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

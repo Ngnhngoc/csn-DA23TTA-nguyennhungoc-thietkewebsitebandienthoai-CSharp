@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ Admin";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card p-3 bg-primary text-white mb-3">
+            <h3>@ViewBag.SoLuongSanPham</h3>
+            <p>Sản phẩm</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 bg-success text-white mb-3">
+            <h3>@ViewBag.SoLuongDonHang</h3>
+            <p>Đơn hàng</p>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 bg-warning text-dark mb-3">
+            <h3>@ViewBag.SoLuongLienHe</h3>
+            <p>Liên hệ mới</p>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header fw-bold">Chào mừng trở lại!</div>
+    <div class="card-body">
+        <p>Đây là giao diện quản trị website. Bạn có thể chọn menu bên trái để bắt đầu quản lý.</p>
+    </div>
+</div>

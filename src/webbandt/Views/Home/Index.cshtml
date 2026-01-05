@@ -1,0 +1,285 @@
+﻿@model IEnumerable<webbandt.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - Web Bán Điện Thoại</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* CSS Header */
+        #header {
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #E3E6F3; /* Màu nền menu */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            /* QUAN TRỌNG: Giúp menu luôn nổi lên trên cùng */
+            z-index: 99999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+            #header .logo {
+                height: 50px;
+                width: auto;
+            }
+
+        /* CSS Banner Slide */
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        #home-banner-slider {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* CSS Thẻ Sản Phẩm */
+        .product-card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+            .product-card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+                z-index: 2;
+                border-color: #d70018 !important;
+            }
+
+        .section-title {
+            border-left: 5px solid #d70018;
+            padding-left: 10px;
+            color: #333;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.3); /* Nền màu đen mờ (giống hình mẫu) */
+            border-radius: 50%; /* Bo tròn thành hình tròn */
+            width: 45px; /* Độ rộng nút */
+            height: 45px; /* Độ cao nút */
+            background-size: 50%; /* Chỉnh kích thước mũi tên bên trong */
+            transition: all 0.3s ease; /* Hiệu ứng mượt khi rơ chuột */
+        }
+
+        /* Khi rơ chuột vào thì nút đậm hơn */
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.8); /* Đậm đen hơn khi hover */
+            transform: scale(1.1); /* Phóng to nhẹ */
+        }
+    </style>
+</head>
+<body>
+
+    <section id="header">
+        <a href="/"><img src="~/images/logodoi.jpg" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="menu" class="d-flex align-items-center m-0">
+                <li id="lg-home"><a class="danhdau" href="/"><i class="fas fa-home"></i></a></li>
+                <li><a href="/Home/Sanpham">Sản Phẩm</a></li>
+                <li><a href="/Home/Lienhe">Liên hệ</a></li>
+                <li><a href="/Home/LichSuDonHang">Lịch sử đơn hàng</a></li>
+                <partial name="_LoginPartial" />
+                <li id="lg-bag"><a href="/Home/GioHang"><i class="fas fa-shopping-bag"></i></a></li>
+                <li><a href="#" id="close"><i class="fas fa-times"></i></a></li>
+            </ul>
+        </div>
+        <div id="mobile"><a href="#"><i class="fas fa-shopping-bag"></i></a><i id="bar" class="fas fa-bars"></i></div>
+    </section>
+
+    <section id="home-banner-slider">
+        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-wrap="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/images/bb2.webp" class="d-block w-100 mx-auto" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/bb3.webp" class="d-block w-100 mx-auto" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/bb5.webp" class="d-block w-100 mx-auto" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/bn1.png" class="d-block w-100 mx-auto" alt="Banner 4">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                      style="background-color: rgba(0,0,0,0.4); border-radius: 50%; width: 45px; height: 45px; background-size: 50%;"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                      style="background-color: rgba(0,0,0,0.4); border-radius: 50%; width: 45px; height: 45px; background-size: 50%;"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <section class="container my-5">
+        <div class="bg-white shadow-sm rounded-3 border overflow-hidden p-3">
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-top" style="top: 90px;">
+                        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:321:795/q:90/plain/https://media-asset.cellphones.com.vn/page_configs/01KC3GBAFXWATZG93DKY88VFXT.png" alt="Quảng cáo" class="w-100 rounded-3 shadow-sm" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h4 class="section-title m-0">SẢN PHẨM NỔI BẬT</h4>
+                        <a href="/Home/Sanpham" class="text-decoration-none text-muted small">Xem tất cả ></a>
+                    </div>
+                    <div class="row row-cols-2 row-cols-md-4 g-3">
+                        @foreach (var item in Model.Take(8)) /* Lấy sản phẩm số 1 đến 8 */
+                        {
+                            <div class="col">
+                                <div class="card h-100 border-0 shadow-sm product-card-hover p-2 text-center" onclick="window.location.href='/Home/Chitietsp?id=@item.Id';">
+                                    <div class="position-relative mb-2">
+                                        <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/images/no-image.jpg" : item.ImageUrl)" class="card-img-top" style="height: 160px; object-fit: contain;" alt="@item.Name">
+                                        <span class="position-absolute top-0 start-0 badge bg-danger m-1">Hot</span>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <p class="text-muted small mb-1">@(item.HangSanXuat != null ? item.HangSanXuat.TenHang : "Điện thoại")</p>
+                                        <h6 class="card-title fw-bold text-dark text-truncate" title="@item.Name">@item.Name</h6>
+                                        <p class="text-danger fw-bold fs-5 mb-0">@item.Price.ToString("n0")₫</p>
+                                    </div>
+                                    <form action="/Kiemtrathanhtoan/ThemVaoGio" method="post" class="mt-2">
+                                        <input type="hidden" name="id" value="@item.Id" /><input type="hidden" name="ten" value="@item.Name" /><input type="hidden" name="gia" value="@item.Price" /><input type="hidden" name="anh" value="@item.ImageUrl" />
+                                        <button type="submit" class="btn btn-outline-danger btn-sm w-100 rounded-pill"><i class="fas fa-shopping-cart"></i> Mua ngay</button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center mt-4">
+        <a href="/Home/Sanpham" class="btn btn-outline-danger px-5 rounded-pill">Xem tất cả sản phẩm</a>
+    </div>
+    <section class="container my-5">
+        <div class="bg-white shadow-sm rounded-3 border p-4">
+            <div class="text-center mb-4">
+                <h3 class="fw-bold text-uppercase d-inline-block border-bottom border-danger border-3 pb-1">Gợi Ý Cho Bạn</h3>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                @foreach (var item in Model.Skip(8).Take(8))
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 product-card">
+                            <div class="position-relative overflow-hidden text-center p-3">
+                                <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/images/no-image.jpg" : item.ImageUrl)"
+                                     class="card-img-top" style="height: 180px; object-fit: contain;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h6 class="card-title text-truncate fw-bold">@item.Name</h6>
+                                <p class="text-danger fw-bold">@item.Price.ToString("n0")₫</p>
+                                <a href="/Home/Chitietsp?id=@item.Id" class="btn btn-light border rounded-pill">Xem chi tiết</a>
+                            </div>
+                            <div class="position-absolute top-0 start-0 m-2 badge bg-info text-white rounded-pill">Gợi ý</div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="/Home/Sanpham" class="btn btn-outline-secondary px-5 rounded-pill">Xem thêm gợi ý <i class="fas fa-chevron-down ms-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h4>Thế Giới Di Động</h4>
+                    <p>Hệ thống bán lẻ điện thoại di động, laptop, phụ kiện chính hãng hàng đầu Việt Nam.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/1CSziPrQTW/?mibextid=wwXIfr" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@@nguyennhungoc7368" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/phonereal_dienthoai/?igsh=MWM2a3psY3V1ZHloaQ%3D%3D&utm_source=qr" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@@phonereal_dienthoai?_r=1&_t=ZS-92DhgMQ2LOX" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Lưu ý</h4>
+                    <a href="#">Kiểm tra hàng trước khi thanh toán</a>
+                    <a href="#">Vui lòng giữ lại hóa đơn khi đổi trả </a>
+                    <a href="#">Liên hệ cho cửa hàng để giải đáp thắc mắc</a>
+                    <a href="#">Bảo hành khi phát hiện máy lỗi</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p><i class="fas fa-phone-alt"></i> Hotline: 0332767567</p>
+                    <p><i class="fas fa-envelope"></i> Email: ngocsummer0309@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Đông khởi nối dài, Trà Vinh </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025 CSN Thiết kế bởi Nguyễn Như Ngọc.
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const bar = document.querySelector('#bar'); const nav = document.querySelector('#menu'); const close = document.querySelector('#close');
+        if (bar) bar.addEventListener('click', () => { nav.classList.toggle('active'); });
+        if (close) close.addEventListener('click', () => { nav.classList.remove('active'); });
+    </script>
+</body>
+</html>
