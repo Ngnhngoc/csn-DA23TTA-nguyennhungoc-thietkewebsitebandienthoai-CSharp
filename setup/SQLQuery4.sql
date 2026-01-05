@@ -1,0 +1,2 @@
+﻿SELECT * FROM DonHang
+SELECT * FROM ChiTietDonHang

@@ -1,0 +1,3 @@
+﻿SELECT * FROM Products
+SELECT * FROM DonHang
+SELECT * FROM ChiTietDonHang

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Quản Trị</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        /* Sidebar bên trái */
+        .sidebar {
+            min-height: 100vh;
+            background: #343a40; /* Màu tối chuyên nghiệp */
+            color: #fff;
+        }
+
+            .sidebar a {
+                color: #c2c7d0;
+                text-decoration: none;
+                display: block;
+                padding: 10px 20px;
+                border-bottom: 1px solid #4b545c;
+            }
+
+                .sidebar a:hover, .sidebar a.active {
+                    background: #007bff;
+                    color: #fff;
+                }
+
+            .sidebar .brand {
+                font-size: 20px;
+                font-weight: bold;
+                padding: 20px;
+                text-align: center;
+                background: #212529;
+                color: #fff;
+            }
+        /* Nội dung bên phải */
+        .content-wrapper {
+            padding: 20px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-2 p-0 sidebar">
+                <div class="brand">ADMIN CP</div>
+                <div class="list-group list-group-flush">
+
+                    <a asp-area="Admin" asp-controller="HangSanXuat" asp-action="Index"
+                       class="list-group-item list-group-item-action bg-transparent">
+                        <i class="fas fa-fw fa-list me-2"></i> Quản lý Hãng
+                    </a>
+
+                    <a asp-area="Admin" asp-controller="Products" asp-action="Index"
+                       class="list-group-item list-group-item-action bg-transparent">
+                        <i class="fas fa-box me-2"></i> Quản lý Sản phẩm
+                    </a>
+
+                    <a asp-area="Admin" asp-controller="DonHang" asp-action="Index"
+                       class="list-group-item list-group-item-action bg-transparent">
+                        <i class="fas fa-shopping-cart me-2"></i> Quản lý Đơn hàng
+                    </a>
+
+                    <a asp-area="Admin" asp-controller="Role" asp-action="Index"
+                       class="list-group-item list-group-item-action bg-transparent">
+                        <i class="fas fa-user-shield me-2"></i> Quản lý Quyền
+                    </a>
+
+                    <a asp-area="" asp-controller="Home" asp-action="Index"
+                       class="list-group-item list-group-item-action bg-transparent text-warning mt-5">
+                        <i class="fas fa-sign-out-alt me-2"></i> Về trang bán hàng
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-md-10 p-0">
+                <nav class="navbar navbar-light bg-white border-bottom px-4">
+                    <span class="navbar-text">Xin chào, <b>Admin</b></span>
+                </nav>
+
+                <div class="content-wrapper">
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

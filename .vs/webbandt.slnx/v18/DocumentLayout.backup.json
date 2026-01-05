@@ -1,0 +1,597 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\manage\\email.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\manage\\email.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\manage\\managenavpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\manage\\managenavpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\yourdbcontexttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\yourdbcontexttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\hangsanxuatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\hangsanxuatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\views\\role\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\chitietsp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\chitietsp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\lichsudonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\lichsudonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\lienhe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\_menuhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\_menuhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\views\\home\\dathangthanhcong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\views\\home\\dathangthanhcong.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.HangSanXuats.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.Products.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserLogins.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserTokens.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\areas\\admin\\views\\hangsanxuat\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\areas\\admin\\views\\hangsanxuat\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\hienthihangsp\\hangsanxuatmenuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\hienthihangsp\\hangsanxuatmenuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|d:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\migrations\\20251228181139_taolaidatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFF97860-133D-49F4-84C7-86C153FC48A9}|webbandt\\webbandt.csproj|solutionrelative:webbandt\\migrations\\20251228181139_taolaidatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAAAAUBAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T05:27:33.689Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Email.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T12:33:18.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T12:13:08.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T12:33:32.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ManageNavPages.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Manage\\ManageNavPages.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T12:12:12.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YourDbContextType.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\YourDbContextType.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\YourDbContextType.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\YourDbContextType.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\YourDbContextType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:51:43.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HangSanXuatController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\HangSanXuatController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\HangSanXuatController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\HangSanXuatController.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\HangSanXuatController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:51:30.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:51:17.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T17:09:52.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T10:40:37.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DonHangController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\DonHangController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Controllers\\DonHangController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Controllers\\DonHangController.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Controllers\\DonHangController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T11:51:24.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Program.cs",
+              "RelativeDocumentMoniker": "webbandt\\Program.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Program.cs",
+              "RelativeToolTip": "webbandt\\Program.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T10:31:37.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "webbandt\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "webbandt\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwBYAAACoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T17:09:46.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Views\\Role\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T10:41:44.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Views\\Role\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T10:42:38.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwEYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-30T10:27:47.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Lienhe.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Lienhe.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\Lienhe.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Lienhe.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\Lienhe.cshtml",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAAACUBAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:46:52.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Chitietsp.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Chitietsp.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\Chitietsp.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Chitietsp.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\Chitietsp.cshtml",
+              "ViewState": "AgIAAKcCAAAAAAAAAAAlwLYCAACmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:47:31.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Sanpham.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Sanpham.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\Sanpham.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\Sanpham.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\Sanpham.cshtml",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAAN0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:46:24.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T19:18:41.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T19:56:27.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAwwEUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T19:56:40.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAQwE8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T19:57:36.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LichSuDonHang.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\LichSuDonHang.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\LichSuDonHang.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\LichSuDonHang.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\LichSuDonHang.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:47:07.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "giohang.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\giohang.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\giohang.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\giohang.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\giohang.cshtml",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAFcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:47:15.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_MenuHang.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\_MenuHang.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\_MenuHang.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\_MenuHang.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\_MenuHang.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:47:58.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DatHangThanhCong.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\DatHangThanhCong.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Views\\Home\\DatHangThanhCong.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Views\\Home\\DatHangThanhCong.cshtml",
+              "RelativeToolTip": "webbandt\\Views\\Home\\DatHangThanhCong.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T13:47:28.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-29T19:15:06.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "dbo.HangSanXuats.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.HangSanXuats.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.HangSanXuats.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-28T20:35:54.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "dbo.Products.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.Products.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.Products.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-28T20:28:50.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "dbo.AspNetUserLogins.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserLogins.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserLogins.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-28T20:16:17.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "dbo.AspNetUserTokens.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserTokens.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUserTokens.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-28T20:16:10.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "dbo.AspNetUsers.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_webbandt_a5c7cb71_4df2_4f7d_b36f_294b069133ad/True/SqlTable/dbo.AspNetUsers.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-28T20:08:28.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "20251228181139_TaoLaiDatabase.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Migrations\\20251228181139_TaoLaiDatabase.cs",
+              "RelativeDocumentMoniker": "webbandt\\Migrations\\20251228181139_TaoLaiDatabase.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Migrations\\20251228181139_TaoLaiDatabase.cs",
+              "RelativeToolTip": "webbandt\\Migrations\\20251228181139_TaoLaiDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T18:11:39.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20251228180535_Update_Fix_Loi.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs",
+              "RelativeDocumentMoniker": "webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs",
+              "RelativeToolTip": "webbandt\\Data\\Migrations\\20251228180535_Update_Fix_Loi.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T18:05:35.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\HangSanXuat\\Create.cshtml",
+              "RelativeDocumentMoniker": "webbandt\\Areas\\Admin\\Views\\HangSanXuat\\Create.cshtml",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\Areas\\Admin\\Views\\HangSanXuat\\Create.cshtml",
+              "RelativeToolTip": "webbandt\\Areas\\Admin\\Views\\HangSanXuat\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-28T17:10:09.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "HangSanXuatMenuViewComponent.cs",
+              "DocumentMoniker": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\hienthihangsp\\HangSanXuatMenuViewComponent.cs",
+              "RelativeDocumentMoniker": "webbandt\\hienthihangsp\\HangSanXuatMenuViewComponent.cs",
+              "ToolTip": "D:\\n\u1ECDc n\u1ECDc\\csn2\\webbandt\\webbandt\\hienthihangsp\\HangSanXuatMenuViewComponent.cs",
+              "RelativeToolTip": "webbandt\\hienthihangsp\\HangSanXuatMenuViewComponent.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T17:09:56.958Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

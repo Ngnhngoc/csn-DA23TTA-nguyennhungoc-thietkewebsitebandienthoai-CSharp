@@ -1,0 +1,20 @@
+﻿@model IEnumerable<webbandt.Models.HangSanXuat>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white text-uppercase fw-bold">
+        <i class="fas fa-bars me-2"></i> Danh mục hãng
+    </div>
+    <div class="list-group list-group-flush">
+        <a asp-controller="Home" asp-action="Sanpham" class="list-group-item list-group-item-action">
+            <i class="fas fa-th-large me-2"></i> Tất cả sản phẩm
+        </a>
+
+        @foreach (var item in Model)
+        {
+            // Link lọc sản phẩm theo mã hãng
+            <a asp-controller="Home" asp-action="Sanpham" asp-route-maHang="@item.MaHang" class="list-group-item list-group-item-action">
+                <i class="fas fa-mobile-alt me-2 text-secondary"></i> @item.TenHang
+            </a>
+        }
+    </div>
+</div>

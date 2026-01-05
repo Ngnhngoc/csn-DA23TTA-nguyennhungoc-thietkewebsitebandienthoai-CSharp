@@ -1,0 +1,41 @@
+﻿@model IEnumerable<webbandt.Models.HangSanXuat>
+
+@{
+    ViewData["Title"] = "Quản lý Hãng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách Hãng</h6>
+        <a href="/Admin/HangSanXuat/Create" class="btn btn-primary btn-sm">
+            <i class="fas fa-plus"></i> Thêm mới
+        </a>
+    </div>
+    <div class="card-body">
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Mã Hãng</th>
+                        <th>Tên Hãng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.MaHang</td>
+                            <td>@item.TenHang</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-center text-muted">Chưa có hãng nào. Hãy bấm "Thêm mới"!</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,87 @@
+﻿@model webbandt.Models.Hoadontamthoi
+@{
+    ViewData["Title"] = "Kiểm tra thanh toán";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<div class="container" style="margin-top:20px; display:flex; gap:30px;">
+
+    <div style="flex:2;">
+        <h3>Thông tin giao hàng</h3>
+        <form id="frmThanhToan" asp-controller="Kiemtrathanhtoan" asp-action="ProcessPayment" method="post">
+            <div class="mb-3">
+                <label>Họ tên</label>
+                <input asp-for="HoTen" class="form-control" id="HoTen" required placeholder="Nguyễn Văn A" />
+            </div>
+            <div class="mb-3">
+                <label>Số điện thoại</label>
+                <input asp-for="SoDienThoai" class="form-control" required placeholder="09xxx" />
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input asp-for="Email" class="form-control" required placeholder="email@gmail.com" />
+            </div>
+            <div class="mb-3">
+                <label>Địa chỉ</label>
+                <input asp-for="DiaChi" class="form-control" required />
+            </div>
+        </form>
+    </div>
+
+    <div style="flex:1; border:1px solid #ddd; padding:20px; border-radius:8px;">
+        <h4>Đơn hàng</h4>
+        <hr />
+        @if (Model.GioHang != null)
+        {
+            foreach (var item in Model.GioHang)
+            {
+                <div style="display:flex; justify-content:space-between; margin-bottom:10px; border-bottom:1px dashed #eee;">
+                    <span>
+                        @item.TenSanPham
+                        <span class="badge bg-secondary" style="font-size:12px;">@item.KichThuoc</span>
+                        <small>(x @item.SoLuong)</small>
+                    </span>
+                    <strong>@item.ThanhTien.ToString("N0") đ</strong>
+                </div>
+            }
+        }
+        <hr />
+        <div style="font-size:20px; color:red; font-weight:bold; text-align:right;">
+            Tổng: @Model.TongTien.ToString("N0") đ
+        </div>
+
+        <button id="btnMoPopup" class="btn btn-success w-100 mt-3" style="padding:15px; font-weight:bold;">
+            THANH TOÁN QR
+        </button>
+    </div>
+</div>
+
+<div id="popupQR" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:9999;">
+    <div style="background:white; padding:30px; width:400px; text-align:center; border-radius:10px;">
+        <h3>Quét mã thanh toán</h3>
+        <img id="imgQR" src="" style="width:200px; margin:15px 0;">
+        <p>Số tiền cần trả: <b style="color:red">@Model.TongTien.ToString("N0") đ</b></p>
+
+        <button id="btnXacNhan" class="btn btn-primary w-100">TÔI ĐÃ CHUYỂN KHOẢN</button>
+        <button id="btnDongPopup" class="btn btn-secondary w-100 mt-2">Đóng</button>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#btnMoPopup").click(function() {
+            var ten = $("#HoTen").val();
+            if (ten === "") { alert("Nhập tên trước!"); return; }
+
+            var amount = "@Model.TongTien.ToString("0")";
+            var qrLink = "https://img.vietqr.io/image/MB-0000000000-compact.png?amount=" + amount + "&addInfo=Thanh toan";
+
+            $("#imgQR").attr("src", qrLink);
+            $("#popupQR").css("display", "flex");
+        });
+
+        $("#btnDongPopup").click(function() { $("#popupQR").hide(); });
+        $("#btnXacNhan").click(function() { $("#frmThanhToan").submit(); });
+    });
+</script>
